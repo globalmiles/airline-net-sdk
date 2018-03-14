@@ -1,0 +1,22 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalMilesAirlineAPI.Standard", "GlobalMilesAirlineAPI.Standard/GlobalMilesAirlineAPI.Standard.csproj", "{b8d22b2f-aaa7-47f1-a86e-20218ad7a57c}"
+EndProject
+Global
+    GlobalSection(SolutionConfigurationPlatforms) = preSolution
+        Debug|Any CPU = Debug|Any CPU
+        Release|Any CPU = Release|Any CPU
+    EndGlobalSection
+    GlobalSection(ProjectConfigurationPlatforms) = postSolution
+        {b8d22b2f-aaa7-47f1-a86e-20218ad7a57c}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {b8d22b2f-aaa7-47f1-a86e-20218ad7a57c}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {b8d22b2f-aaa7-47f1-a86e-20218ad7a57c}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {b8d22b2f-aaa7-47f1-a86e-20218ad7a57c}.Release|Any CPU.Build.0 = Release|Any CPU
+    EndGlobalSection
+    GlobalSection(SolutionProperties) = preSolution
+        HideSolutionNode = FALSE
+    EndGlobalSection
+EndGlobal
