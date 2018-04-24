@@ -9,7 +9,8 @@ namespace GlobalMilesAirlineAPI.Standard
 
         public enum Environments
         {
-            TEST,
+            //Cloud Environment
+            CLOUD,
         }
         public enum Servers
         {
@@ -17,14 +18,14 @@ namespace GlobalMilesAirlineAPI.Standard
         }
 
         //The current environment being used
-        public static Environments Environment = Environments.TEST;
+        public static Environments Environment = Environments.CLOUD;
 
         //A map of environments and their corresponding servers/baseurls
         public static Dictionary<Environments, Dictionary<Servers, string>> EnvironmentsMap =
             new Dictionary<Environments, Dictionary<Servers, string>>
             {
                 { 
-                    Environments.TEST,new Dictionary<Servers, string>
+                    Environments.CLOUD,new Dictionary<Servers, string>
                     {
                         { Servers.DEFAULT,"https://test1.api.globalmiles.com" },
                     }

@@ -16,16 +16,30 @@ namespace GlobalMilesAirlineAPI.Standard.Models
     [JsonConverter(typeof(StringValuedEnumConverter))]
     public enum CabinTypeEnum
     {
-        UNKNOWN, //Unknown
-        DISCOUNT_ECONOMY, //Discount Economy
-        ECONOMY, //Economy
-        FULL_ECONOMY, //Full Economy
-        PREMIUM_ECONOMY, //Premium Economy
-        DISCOUNT_BUSINESS, //Discount Business
-        BUSINESS, //Business
-        PREMIUM_BUSINESS, //Premium Business
-        FIRST, //First
-        PREMIUM_FIRST, //Premium First
+        A, //First Class Discounted
+        B, //Economy/Coach
+        C, //Business Class
+        D, //Business Class Discounted
+        E, //Shuttle Service (no reservation allowed) or Economy/Coach Discounted
+        F, //First Class
+        G, //Conditional Reservation
+        H, //Economy/Coach Discounted
+        J, //Business Class Premium
+        K, //Economy/Coach Discounted
+        L, //Economy/Coach Discounted
+        M, //Economy/Coach Discounted
+        N, //Economy/Coach Discounted
+        P, //First Class Premium
+        Q, //Economy/Coach Discounted
+        R, //First Class Suite or Supersonic (discontinued)
+        S, //Economy/Coach
+        T, //Economy/Coach Discounted
+        U, //Shuttle Service
+        V, //Economy/Coach Discounted
+        W, //Economy/Coach Premium
+        X, //Economy/Coach Discounted
+        Y, //Economy/Coach
+        Z, //Business Class Discounted
     }
 
     /// <summary>
@@ -34,7 +48,7 @@ namespace GlobalMilesAirlineAPI.Standard.Models
     public static class CabinTypeEnumHelper
     {
         //string values corresponding the enum elements
-        private static List<string> stringValues = new List<string> { "unknown", "discount_economy", "economy", "full_economy", "premium_economy", "discount_business", "business", "premium_business", "first", "premium_first" };
+        private static List<string> stringValues = new List<string> { "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
 
         /// <summary>
         /// Converts a CabinTypeEnum value to a corresponding string value
@@ -47,16 +61,30 @@ namespace GlobalMilesAirlineAPI.Standard.Models
             {
                 //only valid enum elements can be used
                 //this is necessary to avoid errors
-                case CabinTypeEnum.UNKNOWN:
-                case CabinTypeEnum.DISCOUNT_ECONOMY:
-                case CabinTypeEnum.ECONOMY:
-                case CabinTypeEnum.FULL_ECONOMY:
-                case CabinTypeEnum.PREMIUM_ECONOMY:
-                case CabinTypeEnum.DISCOUNT_BUSINESS:
-                case CabinTypeEnum.BUSINESS:
-                case CabinTypeEnum.PREMIUM_BUSINESS:
-                case CabinTypeEnum.FIRST:
-                case CabinTypeEnum.PREMIUM_FIRST:
+                case CabinTypeEnum.A:
+                case CabinTypeEnum.B:
+                case CabinTypeEnum.C:
+                case CabinTypeEnum.D:
+                case CabinTypeEnum.E:
+                case CabinTypeEnum.F:
+                case CabinTypeEnum.G:
+                case CabinTypeEnum.H:
+                case CabinTypeEnum.J:
+                case CabinTypeEnum.K:
+                case CabinTypeEnum.L:
+                case CabinTypeEnum.M:
+                case CabinTypeEnum.N:
+                case CabinTypeEnum.P:
+                case CabinTypeEnum.Q:
+                case CabinTypeEnum.R:
+                case CabinTypeEnum.S:
+                case CabinTypeEnum.T:
+                case CabinTypeEnum.U:
+                case CabinTypeEnum.V:
+                case CabinTypeEnum.W:
+                case CabinTypeEnum.X:
+                case CabinTypeEnum.Y:
+                case CabinTypeEnum.Z:
                     return stringValues[(int)enumValue];
 
                 //an invalid enum value was requested
