@@ -22,7 +22,7 @@ namespace GlobalMilesAirlineAPI.Standard.Models
     {
         // These fields hold the values for the public properties.
         private string ffpNumber;
-        private Models.CardTypeEnum? cardType;
+        private Models.TierTypeEnum? tierType;
         private List<Models.ExtraInfoTypeEnum> needExtraInfo;
 
         /// <summary>
@@ -43,19 +43,19 @@ namespace GlobalMilesAirlineAPI.Standard.Models
         }
 
         /// <summary>
-        /// Type of the miles card.
+        /// Type of tiers.
         /// </summary>
-        [JsonProperty("card_type", ItemConverterType = typeof(StringValuedEnumConverter))]
-        public Models.CardTypeEnum? CardType 
+        [JsonProperty("tier_type", ItemConverterType = typeof(StringValuedEnumConverter))]
+        public Models.TierTypeEnum? TierType 
         { 
             get 
             {
-                return this.cardType; 
+                return this.tierType; 
             } 
             set 
             {
-                this.cardType = value;
-                onPropertyChanged("CardType");
+                this.tierType = value;
+                onPropertyChanged("TierType");
             }
         }
 

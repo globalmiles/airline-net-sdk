@@ -14,6 +14,17 @@ namespace GlobalMilesAirlineAPI.Standard
     {
 
         /// <summary>
+        /// Singleton access to Members controller
+        /// </summary>
+        public MembersController Members
+        {
+            get
+            {
+                return MembersController.Instance;
+            }
+        }
+
+        /// <summary>
         /// Singleton access to Flights controller
         /// </summary>
         public FlightsController Flights

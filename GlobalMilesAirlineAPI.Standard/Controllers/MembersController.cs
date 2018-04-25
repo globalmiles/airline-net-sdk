@@ -21,18 +21,18 @@ using GlobalMilesAirlineAPI.Standard.Exceptions;
 
 namespace GlobalMilesAirlineAPI.Standard.Controllers
 {
-    public partial class FlightsController: BaseController
+    public partial class MembersController: BaseController
     {
         #region Singleton Pattern
 
         //private static variables for the singleton pattern
         private static object syncObject = new object();
-        private static FlightsController instance = null;
+        private static MembersController instance = null;
 
         /// <summary>
         /// Singleton pattern implementation
         /// </summary>
-        internal static FlightsController Instance
+        internal static MembersController Instance
         {
             get
             {
@@ -40,7 +40,7 @@ namespace GlobalMilesAirlineAPI.Standard.Controllers
                 {
                     if (null == instance)
                     {
-                        instance = new FlightsController();
+                        instance = new MembersController();
                     }
                 }
                 return instance;
@@ -50,30 +50,30 @@ namespace GlobalMilesAirlineAPI.Standard.Controllers
         #endregion Singleton Pattern
 
         /// <summary>
-        /// This endpoint allows to search the status of flight.
+        /// This endpoint allows to recommend a new member to airlines.
         /// </summary>
         /// <param name="body">Required parameter: The body of the request.</param>
-        /// <return>Returns the Models.FlightStatusResponse response from the API call</return>
-        public Models.FlightStatusResponse CreateFlightStatus(Models.FlightStatusRequest body)
+        /// <return>Returns the Models.NewMemberResponse response from the API call</return>
+        public Models.NewMemberResponse CreateRecommendANewMember(Models.NewMemberRequest body)
         {
-            Task<Models.FlightStatusResponse> t = CreateFlightStatusAsync(body);
+            Task<Models.NewMemberResponse> t = CreateRecommendANewMemberAsync(body);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
 
         /// <summary>
-        /// This endpoint allows to search the status of flight.
+        /// This endpoint allows to recommend a new member to airlines.
         /// </summary>
         /// <param name="body">Required parameter: The body of the request.</param>
-        /// <return>Returns the Models.FlightStatusResponse response from the API call</return>
-        public async Task<Models.FlightStatusResponse> CreateFlightStatusAsync(Models.FlightStatusRequest body)
+        /// <return>Returns the Models.NewMemberResponse response from the API call</return>
+        public async Task<Models.NewMemberResponse> CreateRecommendANewMemberAsync(Models.NewMemberRequest body)
         {
             //the base uri for api requests
             string _baseUri = Configuration.GetBaseURI();
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/v1/airline/flights/actions/status");
+            _queryBuilder.Append("/v1/airline/members/");
 
 
             //validate and preprocess url
@@ -101,7 +101,7 @@ namespace GlobalMilesAirlineAPI.Standard.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.FlightStatusResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.NewMemberResponse>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -110,30 +110,30 @@ namespace GlobalMilesAirlineAPI.Standard.Controllers
         }
 
         /// <summary>
-        /// This endpoint allows to create a flight on the system and defines the mileage rules for the passenger.
+        /// This endpoint allows to search a member on the airline system.
         /// </summary>
         /// <param name="body">Required parameter: The body of the request.</param>
-        /// <return>Returns the Models.Response response from the API call</return>
-        public Models.Response CreateFlightCreation(Models.FlightCreateRequest body)
+        /// <return>Returns the Models.MemberSearchResponse response from the API call</return>
+        public Models.MemberSearchResponse CreateMemberSearch(Models.MemberSearchRequest body)
         {
-            Task<Models.Response> t = CreateFlightCreationAsync(body);
+            Task<Models.MemberSearchResponse> t = CreateMemberSearchAsync(body);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
 
         /// <summary>
-        /// This endpoint allows to create a flight on the system and defines the mileage rules for the passenger.
+        /// This endpoint allows to search a member on the airline system.
         /// </summary>
         /// <param name="body">Required parameter: The body of the request.</param>
-        /// <return>Returns the Models.Response response from the API call</return>
-        public async Task<Models.Response> CreateFlightCreationAsync(Models.FlightCreateRequest body)
+        /// <return>Returns the Models.MemberSearchResponse response from the API call</return>
+        public async Task<Models.MemberSearchResponse> CreateMemberSearchAsync(Models.MemberSearchRequest body)
         {
             //the base uri for api requests
             string _baseUri = Configuration.GetBaseURI();
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/v1/airline/flights");
+            _queryBuilder.Append("/v1/airline/members/actions/search");
 
 
             //validate and preprocess url
@@ -161,7 +161,7 @@ namespace GlobalMilesAirlineAPI.Standard.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.Response>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.MemberSearchResponse>(_response.Body);
             }
             catch (Exception _ex)
             {

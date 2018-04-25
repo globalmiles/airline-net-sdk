@@ -17,7 +17,7 @@ namespace GlobalMilesAirlineAPI.Standard.Models
     public enum AwardTypeEnum
     {
         DISTANCE_BASED, //TODO: Write general description for this method
-        FAIR_BASED, //TODO: Write general description for this method
+        FARE_BASED, //TODO: Write general description for this method
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace GlobalMilesAirlineAPI.Standard.Models
     public static class AwardTypeEnumHelper
     {
         //string values corresponding the enum elements
-        private static List<string> stringValues = new List<string> { "distance_based", "fair_based" };
+        private static List<string> stringValues = new List<string> { "distance_based", "fare_based" };
 
         /// <summary>
         /// Converts a AwardTypeEnum value to a corresponding string value
@@ -40,7 +40,7 @@ namespace GlobalMilesAirlineAPI.Standard.Models
                 //only valid enum elements can be used
                 //this is necessary to avoid errors
                 case AwardTypeEnum.DISTANCE_BASED:
-                case AwardTypeEnum.FAIR_BASED:
+                case AwardTypeEnum.FARE_BASED:
                     return stringValues[(int)enumValue];
 
                 //an invalid enum value was requested

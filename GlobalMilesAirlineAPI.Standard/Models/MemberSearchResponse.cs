@@ -21,24 +21,24 @@ namespace GlobalMilesAirlineAPI.Standard.Models
     public class MemberSearchResponse : Response 
     {
         // These fields hold the values for the public properties.
-        private Models.CardTypeEnum cardType;
+        private Models.TierTypeEnum tierType;
         private int baseMiles;
         private int promoMiles;
 
         /// <summary>
-        /// Type of miles card.
+        /// Type of tiers.
         /// </summary>
-        [JsonProperty("card_type", ItemConverterType = typeof(StringValuedEnumConverter))]
-        public Models.CardTypeEnum CardType 
+        [JsonProperty("tier_type", ItemConverterType = typeof(StringValuedEnumConverter))]
+        public Models.TierTypeEnum TierType 
         { 
             get 
             {
-                return this.cardType; 
+                return this.tierType; 
             } 
             set 
             {
-                this.cardType = value;
-                onPropertyChanged("CardType");
+                this.tierType = value;
+                onPropertyChanged("TierType");
             }
         }
 

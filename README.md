@@ -78,7 +78,72 @@ GlobalMilesAirlineAPIClient client = new GlobalMilesAirlineAPIClient();
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
+* [MembersController](#members_controller)
 * [FlightsController](#flights_controller)
+
+## <a name="members_controller"></a>![Class: ](https://apidocs.io/img/class.png "GlobalMilesAirlineAPI.Standard.Controllers.MembersController") MembersController
+
+### Get singleton instance
+
+The singleton instance of the ``` MembersController ``` class can be accessed from the API Client.
+
+```csharp
+MembersController members = client.Members;
+```
+
+### <a name="create_recommend_a_new_member"></a>![Method: ](https://apidocs.io/img/method.png "GlobalMilesAirlineAPI.Standard.Controllers.MembersController.CreateRecommendANewMember") CreateRecommendANewMember
+
+> This endpoint allows to recommend a new member to airlines.
+
+
+```csharp
+Task<Models.NewMemberResponse> CreateRecommendANewMember(Models.NewMemberRequest body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | The body of the request. |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.NewMemberRequest();
+
+Models.NewMemberResponse result = await members.CreateRecommendANewMember(body);
+
+```
+
+
+### <a name="create_member_search"></a>![Method: ](https://apidocs.io/img/method.png "GlobalMilesAirlineAPI.Standard.Controllers.MembersController.CreateMemberSearch") CreateMemberSearch
+
+> This endpoint allows to search a member on the airline system.
+
+
+```csharp
+Task<Models.MemberSearchResponse> CreateMemberSearch(Models.MemberSearchRequest body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | The body of the request. |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.MemberSearchRequest();
+
+Models.MemberSearchResponse result = await members.CreateMemberSearch(body);
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
 
 ## <a name="flights_controller"></a>![Class: ](https://apidocs.io/img/class.png "GlobalMilesAirlineAPI.Standard.Controllers.FlightsController") FlightsController
 
@@ -90,62 +155,28 @@ The singleton instance of the ``` FlightsController ``` class can be accessed fr
 FlightsController flights = client.Flights;
 ```
 
-### <a name="create_recommend_a_new_member"></a>![Method: ](https://apidocs.io/img/method.png "GlobalMilesAirlineAPI.Standard.Controllers.FlightsController.CreateRecommendANewMember") CreateRecommendANewMember
-
-> This endpoint allows to recommend a new member to airlines.
-
-
-```csharp
-Task<Models.NewMemberResponse> CreateRecommendANewMember(string accept, string contentType, Models.NewMemberRequest body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| accept |  ``` Required ```  ``` DefaultValue ```  | It advertises which content type is able to understand. |
-| contentType |  ``` Required ```  ``` DefaultValue ```  | It tells the client what the content type of the returned. |
-| body |  ``` Required ```  | The body of the request. |
-
-
-#### Example Usage
-
-```csharp
-string accept = "application/json";
-string contentType = "application/json";
-var body = new Models.NewMemberRequest();
-
-Models.NewMemberResponse result = await flights.CreateRecommendANewMember(accept, contentType, body);
-
-```
-
-
 ### <a name="create_flight_status"></a>![Method: ](https://apidocs.io/img/method.png "GlobalMilesAirlineAPI.Standard.Controllers.FlightsController.CreateFlightStatus") CreateFlightStatus
 
 > This endpoint allows to search the status of flight.
 
 
 ```csharp
-Task<Models.FlightStatusResponse> CreateFlightStatus(string accept, string contentType, Models.FlightStatusRequest body)
+Task<Models.FlightStatusResponse> CreateFlightStatus(Models.FlightStatusRequest body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| accept |  ``` Required ```  ``` DefaultValue ```  | It advertises which content type is able to understand. |
-| contentType |  ``` Required ```  ``` DefaultValue ```  | It tells the client what the content type of the returned. |
 | body |  ``` Required ```  | The body of the request. |
 
 
 #### Example Usage
 
 ```csharp
-string accept = "application/json";
-string contentType = "application/json";
 var body = new Models.FlightStatusRequest();
 
-Models.FlightStatusResponse result = await flights.CreateFlightStatus(accept, contentType, body);
+Models.FlightStatusResponse result = await flights.CreateFlightStatus(body);
 
 ```
 
@@ -156,56 +187,22 @@ Models.FlightStatusResponse result = await flights.CreateFlightStatus(accept, co
 
 
 ```csharp
-Task<Models.Response> CreateFlightCreation(string accept, string contentType, Models.FlightCreateRequest body)
+Task<Models.Response> CreateFlightCreation(Models.FlightCreateRequest body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| accept |  ``` Required ```  ``` DefaultValue ```  | It advertises which content type is able to understand. |
-| contentType |  ``` Required ```  ``` DefaultValue ```  | It tells the client what the content type of the returned. |
 | body |  ``` Required ```  | The body of the request. |
 
 
 #### Example Usage
 
 ```csharp
-string accept = "application/json";
-string contentType = "application/json";
 var body = new Models.FlightCreateRequest();
 
-Models.Response result = await flights.CreateFlightCreation(accept, contentType, body);
-
-```
-
-
-### <a name="create_member_search"></a>![Method: ](https://apidocs.io/img/method.png "GlobalMilesAirlineAPI.Standard.Controllers.FlightsController.CreateMemberSearch") CreateMemberSearch
-
-> This endpoint allows to search a member on the airline system.
-
-
-```csharp
-Task<Models.MemberSearchResponse> CreateMemberSearch(string accept, string contentType, Models.MemberSearchRequest body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| accept |  ``` Required ```  ``` DefaultValue ```  | It advertises which content type is able to understand. |
-| contentType |  ``` Required ```  ``` DefaultValue ```  | It tells the client what the content type of the returned. |
-| body |  ``` Required ```  | The body of the request. |
-
-
-#### Example Usage
-
-```csharp
-string accept = "application/json";
-string contentType = "application/json";
-var body = new Models.MemberSearchRequest();
-
-Models.MemberSearchResponse result = await flights.CreateMemberSearch(accept, contentType, body);
+Models.Response result = await flights.CreateFlightCreation(body);
 
 ```
 

@@ -28,7 +28,7 @@ namespace GlobalMilesAirlineAPI.Standard.Models
         private int surveyRatio;
 
         /// <summary>
-        /// The type of the award base. The possible values are 'distance_based' and 'fair_based'.
+        /// The type of the award base. The possible values are 'distance_based' and 'fare_based'.
         /// </summary>
         [JsonProperty("award_type", ItemConverterType = typeof(StringValuedEnumConverter))]
         public Models.AwardTypeEnum AwardType 
@@ -45,7 +45,7 @@ namespace GlobalMilesAirlineAPI.Standard.Models
         }
 
         /// <summary>
-        /// The ratio for calculating base mile from distance or fair. Possible value is an integer between 1 and 100.
+        /// The ratio for calculating base mile from distance or fare. Possible value is an integer between 1 and 100.
         /// </summary>
         [JsonProperty("base_ratio")]
         public int BaseRatio 
