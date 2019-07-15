@@ -7,6 +7,7 @@ namespace GlobalMilesAirlineAPI.Standard
     public partial class Configuration
     {
 
+
         public enum Environments
         {
             //Cloud Environment
@@ -14,7 +15,7 @@ namespace GlobalMilesAirlineAPI.Standard
         }
         public enum Servers
         {
-            DEFAULT,
+            ENUM_DEFAULT,
         }
 
         //The current environment being used
@@ -27,7 +28,7 @@ namespace GlobalMilesAirlineAPI.Standard
                 { 
                     Environments.CLOUD,new Dictionary<Servers, string>
                     {
-                        { Servers.DEFAULT,"https://test1.api.globalmiles.com" },
+                        { Servers.ENUM_DEFAULT,"https://test1.api.globalmiles.com" },
                     }
                 },
             };
@@ -49,7 +50,7 @@ namespace GlobalMilesAirlineAPI.Standard
         /// </summary>
         /// <param name="alias">Default value:DEFAULT</param>
         /// <return>Returns the baseurl</return>
-        internal static string GetBaseURI(Servers alias = Servers.DEFAULT)
+        internal static string GetBaseURI(Servers alias = Servers.ENUM_DEFAULT)
         {
             StringBuilder Url =  new StringBuilder(EnvironmentsMap[Environment][alias]);
             APIHelper.AppendUrlWithTemplateParameters(Url, GetBaseURIParameters());

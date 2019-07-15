@@ -1,9 +1,8 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalMilesAirlineAPI.Standard", "GlobalMilesAirlineAPI.Standard/GlobalMilesAirlineAPI.Standard.csproj", "{14d9ce80-f870-4318-ac78-d945f9848753}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalMilesAirlineAPI.Standard", "GlobalMilesAirlineAPI.Standard/GlobalMilesAirlineAPI.Standard.csproj", "{918e8235-e1ff-4cb7-aef8-bf23aa5a1a08}"
 EndProject
 Global
     GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +10,10 @@ Global
         Release|Any CPU = Release|Any CPU
     EndGlobalSection
     GlobalSection(ProjectConfigurationPlatforms) = postSolution
-        {14d9ce80-f870-4318-ac78-d945f9848753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-        {14d9ce80-f870-4318-ac78-d945f9848753}.Debug|Any CPU.Build.0 = Debug|Any CPU
-        {14d9ce80-f870-4318-ac78-d945f9848753}.Release|Any CPU.ActiveCfg = Release|Any CPU
-        {14d9ce80-f870-4318-ac78-d945f9848753}.Release|Any CPU.Build.0 = Release|Any CPU
+        {918e8235-e1ff-4cb7-aef8-bf23aa5a1a08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {918e8235-e1ff-4cb7-aef8-bf23aa5a1a08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {918e8235-e1ff-4cb7-aef8-bf23aa5a1a08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {918e8235-e1ff-4cb7-aef8-bf23aa5a1a08}.Release|Any CPU.Build.0 = Release|Any CPU
     EndGlobalSection
     GlobalSection(SolutionProperties) = preSolution
         HideSolutionNode = FALSE
